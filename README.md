@@ -1,3 +1,1 @@
-#Docker-Compose LEMP
-
-[![asciicast](https://asciinema.org/a/46801.png)](https://asciinema.org/a/46801)
+Updated Docker LEMP, based on [Evild67](https://github.com/Evild67/docker-compose-lemp) docker-compose file
