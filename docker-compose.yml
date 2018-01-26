@@ -4,8 +4,6 @@ services:
     image: nginx:stable-alpine
     container_name: lemp_nginx
     restart: always
-    depends_on:
-      - php
     volumes:
       - ./html:/var/www/html/
       - ./nginx/conf/nginx.conf:/etc/nginx/conf/nginx.conf
@@ -21,7 +19,7 @@ services:
     volumes:
       - ./html:/var/www/html
     depends_on:
-      - db
+      - nginx
     environment:
       - DB_NAME=lemp_bdd
       - TABLE_PREFIX=lemp_
@@ -37,3 +35,12 @@ services:
         - 3306:3306
     environment:
       - MYSQL_ROOT_PASSWORD=password
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: lemp_phpmyadmin
+    depends_on:
+      - nginx
+      - php
+      - db
+    ports: 
+      - 8080:80
