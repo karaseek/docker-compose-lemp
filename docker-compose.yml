@@ -5,7 +5,7 @@ services:
     container_name: lemp_nginx
     restart: always
     volumes:
-      - ./html:/var/www/html/
+      - ~/www:/var/www/html/
       - ./nginx/conf/nginx.conf:/etc/nginx/conf/nginx.conf
       - ./nginx/conf.d:/etc/nginx/conf.d
     ports:
