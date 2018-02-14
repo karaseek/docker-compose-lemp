@@ -20,11 +20,6 @@ services:
       - ./html:/var/www/html
     depends_on:
       - nginx
-    environment:
-      - DB_NAME=lemp_bdd
-      - TABLE_PREFIX=lemp_
-      - DB_HOST=lemp
-      - DB_PASSWORD=password
     ports:
       - 9000:9000
   db:
@@ -43,4 +38,4 @@ services:
       - php
       - db
     ports: 
-      - 8080:80
+      - 6868:80
